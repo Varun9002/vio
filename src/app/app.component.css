@@ -1,0 +1,56 @@
+.container {
+	display: flex;
+}
+.sideNav {
+	background: #000;
+	color: wheat;
+	width: 60px;
+	height: 100vh;
+	position: sticky;
+	top: 0;
+}
+.main-area {
+	background: gray;
+	flex: 1;
+}
+.nav--logo {
+	margin-top: 5vh;
+	padding: 0 10%;
+}
+.logo {
+	max-width: 100%;
+}
+.nav--list {
+	margin-top: 6vh;
+	list-style: none;
+	padding: 0;
+}
+.nav--items > a {
+	display: block;
+	cursor: pointer;
+	width: 100%;
+	padding: 3vh 0;
+	text-align: center;
+	color: #686868;
+}
+.nav--items > a:hover path:first-of-type {
+	fill: rgb(240, 240, 240);
+	stroke: rgb(240, 240, 240);
+}
+.nav--list .nav--items:last-of-type > a:hover path {
+	stroke: rgb(240, 240, 240);
+	fill: #686868;
+}
+.nav--items > a > svg {
+	margin: 0 auto;
+	display: block;
+}
+
+.nav--profile {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+.nav--profile > .nav--items > a:hover {
+	color: #f0f0f0;
+}
