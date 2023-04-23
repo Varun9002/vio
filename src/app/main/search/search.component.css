@@ -7,22 +7,40 @@
 	font-size: 70px;
 	font-weight: 200;
 }
-.search--page input {
-	background: transparent;
-	display: block;
+.search--page form {
+	width: 50%;
 	margin: auto;
-	border: 2px solid whitesmoke;
+	position: relative;
+	/* width: fit-content; */
+}
+.search--page input {
+	background: #0c0c0c;
+	display: block;
+	border: 2px solid #737373;
 	border-radius: 30px;
 	font-size: 30px;
 	color: whitesmoke;
-	width: 50%;
+	/* width: calc(100% - 70px); */
+	width: 100%;
 	text-align: center;
-	padding: 5px;
+	padding: 5px 70px 5px 5px;
 	height: 60px;
 	outline: none;
-	padding-left: 30px;
 }
 .search--page input:focus {
-	border: 2px solid rgb(115, 115, 115);
+	border: 2px solid whitesmoke;
 	transition: all 0.3s;
+}
+.search--page button {
+	background: transparent;
+	border: none;
+	padding: 5px;
+	height: 60px;
+	position: absolute;
+	top: 1px;
+	right: 20px;
+	cursor: pointer;
+}
+.search--page button:hover path {
+	fill: red;
 }

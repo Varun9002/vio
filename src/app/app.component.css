@@ -1,4 +1,4 @@
-.container {
+.main--container {
 	display: flex;
 }
 .sideNav {
@@ -10,6 +10,7 @@
 	top: 0;
 }
 .main-area {
-	/* background: gray; */
+	max-width: calc(100vw - 60px);
+	padding: 20px 0;
 	flex: 1;
 }

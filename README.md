@@ -1,27 +1,54 @@
 # Vio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.1.
+This is a video sharing website built using Angular, Node.js, Express and MongoDB. Users can upload, view, like, and comment on videos.
 
-## Development server
+## Requirements
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+-   Node.js (version 14 or higher)
+-   Angular CLI (version 12 or higher)
+-   MongoDB
 
-## Code scaffolding
+## Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Clone the repository:
+    ```shell
+    git clone https://github.com/Varun9002/vio.git
+    ```
+2. Install dependencies:
+    ```shell
+    cd vio
+    npm install
+    ```
+3. Start the server:
+    ```shell
+    npm start
+    ```
+4. Open a web browser and go to `http://localhost:4200` to access the website.
 
-## Build
+## Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### User Authentication
 
-## Running unit tests
+Users can create an account and log in to the website. Passwords are hashed using bcrypt to ensure security.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Video Uploading
 
-## Running end-to-end tests
+Users can upload videos in MP4 format. Videos are saved to the server and metadata is stored in MongoDB.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Video Viewing
 
-## Further help
+Users can view videos on the website. Videos are displayed in a responsive player that supports all screen sizes.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Video Liking and Commenting
+
+Users can like and comment on videos. Likes are stored in MongoDB and displayed alongside the video. Comments are stored in MongoDB and displayed below the video.
+
+## Dependencies
+
+-   Angular
+-   Node.js
+-   Express
+-   MongoDB
+-   bcrypt
+-   multer
+-   uuid

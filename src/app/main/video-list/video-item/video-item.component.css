@@ -1,0 +1,39 @@
+.vio--card-img {
+	aspect-ratio: 2/1;
+	object-fit: cover;
+}
+.card-user {
+	display: flex;
+	align-items: center;
+	flex: 1;
+	min-width: 0;
+}
+.card-user img {
+	aspect-ratio: 1/1;
+	width: 40px;
+	border-radius: 50%;
+	object-fit: contain;
+}
+.card-user strong {
+	padding: 5px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.ellipsis {
+	font-size: 18px;
+	margin-bottom: 0.4rem;
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+.hover--zoom:hover {
+	transform: scale(1.05, 1.05);
+	transition: 0.5s all;
+	box-shadow: 0 1rem 3rem rgba(255, 255, 255, 0.1);
+}
+.hover--zoom {
+	transition: 0.5s ease-out all;
+	box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
