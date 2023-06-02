@@ -1,0 +1,90 @@
+.tabs--list {
+	margin-top: 20px;
+	background-color: #202327;
+	display: block;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.tabs--item {
+	background-color: inherit;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	padding: 15px;
+	font-size: larger;
+	color: #686868;
+	cursor: pointer;
+	text-decoration: none;
+	display: inline-block;
+}
+.tabs--item:hover {
+	/* background-color: #17191c; */
+	color: white;
+}
+.tabs--item.active,
+tabs--item.active:hover {
+	color: rgb(200, 0, 0);
+	background-color: #121416;
+}
+.tabss--data {
+	background-color: #121416;
+	padding: 20px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.video--desc {
+	font-size: larger;
+}
+.video--owner {
+	display: flex;
+	align-items: center;
+	flex: 1;
+	min-width: 0;
+	color: whitesmoke;
+	cursor: pointer;
+	text-decoration: none;
+}
+.video--owner img {
+	aspect-ratio: 1/1;
+	width: 40px;
+	border-radius: 50%;
+	object-fit: contain;
+}
+.video--owner h4 {
+	padding: 5px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.add--comment {
+	width: 100%;
+	background: transparent;
+	font-size: x-large;
+	color: whitesmoke;
+	border: none;
+	border-bottom: 1px solid #686868;
+	padding: 0 1.5rem;
+	margin: 10px 0 0 0;
+}
+.add--comment:focus {
+	border: none;
+	outline: none;
+	border-bottom: 2px solid white;
+}
+.comment--btn {
+	margin: 10px;
+	display: flex;
+	justify-content: end;
+	align-items: center;
+}
+.comment--btn > button {
+	padding: 13px;
+	font-size: larger;
+	border-radius: 100px;
+	background: transparent;
+	border: 2px solid red;
+	color: red;
+}
+.comment--btn > button:hover {
+	background: red;
+	color: black;
+}

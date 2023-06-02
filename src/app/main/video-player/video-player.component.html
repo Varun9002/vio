@@ -1,0 +1,47 @@
+.<div class="container">
+    <div class="row justify-content-center align-items-center g-2">
+        <div class="col-12 col-md-10 text-white">
+            <video
+                src="https://player.vimeo.com/external/291648067.hd.mp4?s=94998971682c6a3267e4cbd19d16a7b6c720f345&profile_id=170&oauth2_token_id=57447761"
+                width="100%" controls="true"></video>
+
+            <div class="video--info">
+                <h3>Video Title</h3>
+                <small>33 Views</small>
+                <a class="video--owner ">
+                    <img [src]="'https://i.dummyjson.com/data/products/4/3.jpg'">
+                    <h4>{{'video.ownerName'}}</h4>
+                </a>
+            </div>
+
+            <div class="tabs--list">
+                <a class="tabs--item" [ngClass]="{'active':!showComments}"
+                    (click)="toggleComments(false)">Description</a>
+                <a class="tabs--item" [ngClass]="{'active':showComments}" (click)="toggleComments(true)">Comments</a>
+            </div>
+            <div class="tabss--data ">
+                <div class="video--desc" *ngIf="!showComments">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque aliquam voluptate adipisci
+                        maiores
+                        facere voluptatum placeat nisi, tempore eos quaerat, neque consequatur sunt at vero.
+                        Inventore
+                        labore
+                        officia aspernatur officiis.
+                    </p>
+                </div>
+                <div class="video--comments" *ngIf="showComments">
+                    <form>
+                        <input class="add--comment" type="text" placeholder="  Add comment">
+                        <div class="comment--btn">
+                            <button>Comment</button>
+                        </div>
+                    </form>
+                    <div class="list-group" *ngFor="let i of [1,2,3,4]">
+                        <app-comment></app-comment>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

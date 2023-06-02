@@ -1,0 +1,13 @@
+.comment--box {
+	background: #121416;
+	border-bottom: 2px solid #686868;
+	color: whitesmoke;
+}
+.comment--box a {
+	cursor: pointer;
+	text-decoration: none;
+	color: rgb(255, 0, 0);
+}
+.comment--box small {
+	color: #686868;
+}

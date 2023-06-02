@@ -9,7 +9,7 @@
 	font-weight: 200;
 }
 
-@keyframes slideInLeft {
+@keyframes slideIn {
 	0% {
 		transform: translateY(100%);
 		opacity: 0;
@@ -20,5 +20,5 @@
 	}
 }
 .vid--list {
-	animation: slideInLeft 0.5s ease-in 0s 1;
+	animation: slideIn 0.3s ease-out 0s 1;
 }

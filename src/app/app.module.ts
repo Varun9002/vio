@@ -9,6 +9,8 @@ import { HomeComponent } from './main/home/home.component';
 import { VideoListComponent } from './main/video-list/video-list.component';
 import { VideoItemComponent } from './main/video-list/video-item/video-item.component';
 import { AuthComponent } from './auth/auth.component';
+import { VideoPlayerComponent } from './main/video-player/video-player.component';
+import { CommentComponent } from './main/video-player/comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { AuthComponent } from './auth/auth.component';
     HomeComponent,
     VideoListComponent,
     VideoItemComponent,
-    AuthComponent
+    AuthComponent,
+    VideoPlayerComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
