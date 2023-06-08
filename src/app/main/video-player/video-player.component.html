@@ -1,16 +1,15 @@
 .<div class="container">
     <div class="row justify-content-center align-items-center g-2">
         <div class="col-12 col-md-10 text-white">
-            <video
-                src="https://player.vimeo.com/external/291648067.hd.mp4?s=94998971682c6a3267e4cbd19d16a7b6c720f345&profile_id=170&oauth2_token_id=57447761"
-                width="100%" controls="true"></video>
+            <video [src]="video.url" width="100%" controls="true"></video>
 
             <div class="video--info">
-                <h3>Video Title</h3>
-                <small>33 Views</small>
+                <h3>{{video.title}}</h3>
+                <small>{{video.views}} Views</small>
+
                 <a class="video--owner ">
-                    <img [src]="'https://i.dummyjson.com/data/products/4/3.jpg'">
-                    <h4>{{'video.ownerName'}}</h4>
+                    <img [src]="video.user.imgURL">
+                    <h4>{{video.user.name}}</h4>
                 </a>
             </div>
 

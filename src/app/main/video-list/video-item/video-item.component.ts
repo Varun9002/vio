@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Video } from '../../store/home.reducer';
 
 @Component({
 	selector: 'app-video-item',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 	styleUrls: ['./video-item.component.css'],
 })
 export class VideoItemComponent implements OnInit {
-	@Input() video: any;
+	@Input() video!: Video;
 	constructor() {}
 
 	ngOnInit(): void {}

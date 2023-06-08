@@ -28,12 +28,14 @@
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 2;
 }
+.hover--zoom {
+	text-decoration: none;
+	cursor: pointer;
+	transition: 0.3s ease-out all;
+	box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
 .hover--zoom:hover {
 	transform: scale(1.05, 1.05);
 	transition: 0.3s all;
 	box-shadow: 0 1rem 3rem rgba(255, 255, 255, 0.1);
-}
-.hover--zoom {
-	transition: 0.3s ease-out all;
-	box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 }
