@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Video } from '../store/home.reducer';
 import { Store } from '@ngrx/store';
 import * as fromApp from '../../store/app.reducer';
+import { Video } from './store/home.reducer';
 
 @Component({
 	selector: 'app-home',

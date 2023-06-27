@@ -1,14 +1,14 @@
+import { Injectable } from '@angular/core';
 import {
 	ActivatedRouteSnapshot,
 	Resolve,
 	RouterStateSnapshot,
 } from '@angular/router';
-import { Injectable } from '@angular/core';
-import { Store } from '@ngrx/store';
 import { Actions, ofType } from '@ngrx/effects';
-import * as fromApp from '../../store/app.reducer';
-import * as HomeActions from '../store/home.action';
+import { Store } from '@ngrx/store';
 import { map, switchMap, take } from 'rxjs';
+import * as fromApp from '../../store/app.reducer';
+import * as HomeActions from './store/home.action';
 @Injectable({
 	providedIn: 'root',
 })

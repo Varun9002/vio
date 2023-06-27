@@ -1,0 +1,31 @@
+<div class="mb-md-3 mt-md-4 pb-2">
+    <h2 class="fw-bold pt-2 mb-5">SIGNUP</h2>
+    <form>
+        <div class="form-outline form-white mb-3">
+            <input type="text" id="email" class=" form-control form-control-lg" />
+            <label class="form-label" for="email">Name</label>
+        </div>
+
+        <div class="form-outline form-white mb-3">
+            <input type="email" id="email" class=" form-control form-control-lg" />
+            <label class="form-label" for="email">Email</label>
+        </div>
+
+        <div class="form-outline form-white mb-3">
+            <input type="password" id="password" class="form-control form-control-lg" />
+            <label class="form-label" for="password">Password</label>
+        </div>
+        <div class="form-outline form-white mb-3">
+            <input type="password" id="cnfm-pass" class="form-control form-control-lg" />
+            <label class="form-label" for="cnfm-pass">Confirm Password</label>
+        </div>
+        <button class="btn btn-outline-danger btn-lg px-5" type="submit">Signup</button>
+    </form>
+</div>
+<div>
+    <p class="mb-0">
+        Already have an account?
+        <a (click)="switchMode()" class="text-white-50 fw-bold" style="cursor: pointer;">
+            Login</a>
+    </p>
+</div>

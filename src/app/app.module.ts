@@ -1,21 +1,25 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavComponent } from './sideNav/nav/nav.component';
-import { SearchComponent } from './main/search/search.component';
-import { HomeComponent } from './main/home/home.component';
-import { VideoListComponent } from './main/video-list/video-list.component';
-import { VideoItemComponent } from './main/video-list/video-item/video-item.component';
 import { AuthComponent } from './auth/auth.component';
-import { VideoPlayerComponent } from './main/video-player/video-player.component';
+import { AuthEffects } from './auth/store/auth.effects';
+import { HomeComponent } from './main/home/home.component';
+import { HomeEffects } from './main/home/store/home.effects';
+import { SearchComponent } from './main/search/search.component';
+import { VideoItemComponent } from './main/video-list/video-item/video-item.component';
+import { VideoListComponent } from './main/video-list/video-list.component';
 import { CommentComponent } from './main/video-player/comment/comment.component';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
+import { VideoPlayerComponent } from './main/video-player/video-player.component';
+import { NavComponent } from './sideNav/nav/nav.component';
 import { appReducers } from './store/app.reducer';
-import { HomeEffects } from './main/store/home.effects';
+import { SignupFormComponent } from './auth/signup-form/signup-form.component';
+import { LoginFormComponent } from './auth/login-form/login-form.component';
 
 @NgModule({
 	declarations: [
@@ -28,14 +32,17 @@ import { HomeEffects } from './main/store/home.effects';
 		AuthComponent,
 		VideoPlayerComponent,
 		CommentComponent,
+  SignupFormComponent,
+  LoginFormComponent,
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
+		ReactiveFormsModule,
 		StoreModule,
 		HttpClientModule,
 		StoreModule.forRoot(appReducers),
-		EffectsModule.forRoot([HomeEffects]),
+		EffectsModule.forRoot([HomeEffects, AuthEffects]),
 	],
 	providers: [],
 	bootstrap: [AppComponent],

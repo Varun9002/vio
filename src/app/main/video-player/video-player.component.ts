@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { map, switchMap } from 'rxjs';
 import * as fromApp from 'src/app/store/app.reducer';
-import { Video } from '../store/home.reducer';
+import { Video } from '../home/store/home.reducer';
 
 @Component({
 	selector: 'app-video-player',

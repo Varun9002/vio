@@ -1,10 +1,10 @@
-import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { Video } from './home.reducer';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import * as HomeActions from './home.action';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { map, switchMap } from 'rxjs';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { API_VideoRoot } from 'src/app/models/video.model';
+import * as HomeActions from './home.action';
+import { Video } from './home.reducer';
 @Injectable()
 export class HomeEffects {
 	constructor(private actions$: Actions, private http: HttpClient) {}

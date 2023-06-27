@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Video } from '../../store/home.reducer';
+import { Video } from '../../home/store/home.reducer';
 
 @Component({
 	selector: 'app-video-item',
