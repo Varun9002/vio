@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import * as fromApp from '../store/app.reducer';
 import { AuthService } from './auth.service';
@@ -16,7 +16,7 @@ export class AuthComponent implements OnInit {
 	hasSignedUp = false;
 	errorMsg: string | null = null;
 
-	signupForm!: FormGroup;
+	signupForm!: UntypedFormGroup;
 	constructor(
 		private store: Store<fromApp.AppState>,
 		private authService: AuthService

@@ -16,7 +16,7 @@ const routes: Routes = [
 	{
 		path: 'watch/:vid_id',
 		component: VideoPlayerComponent,
-		pathMatch: 'full',
+		// pathMatch: 'full',
 		resolve: { data: HomeResolverService },
 	},
 	{ path: 'search', component: SearchComponent },
