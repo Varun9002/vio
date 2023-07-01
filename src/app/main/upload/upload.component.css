@@ -1,0 +1,21 @@
+.upload--page {
+	padding: 0 4%;
+	max-width: 100%;
+	overscroll-behavior: none;
+}
+
+.upload--page > h1 {
+	color: whitesmoke;
+	font-size: 70px;
+	font-weight: 200;
+}
+input,
+input:focus,
+textarea,
+textarea:focus {
+	background: linear-gradient(0deg, rgb(74, 74, 74) 0%, rgb(50, 50, 50) 100%);
+	color: white;
+}
+input.ng-dirty.ng-invalid {
+	box-shadow: 0px 1px 10px 2px red;
+}

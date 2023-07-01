@@ -1,6 +1,6 @@
 <a class="list-group-item comment--box">
     <div class=" d-flex w-100 justify-content-between">
-        <a class="h5 mb-1">{{comment.userId.name}}</a>
+        <a class="h5 mb-1" [routerLink]="['/user',comment.userId._id]">{{comment.userId.name}}</a>
         <small>3 days ago</small>
     </div>
     <p class="mb-1"> {{comment.comment}} </p>
