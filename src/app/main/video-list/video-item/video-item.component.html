@@ -1,14 +1,14 @@
-<a class="card text-white bg-dark hover--zoom" [routerLink]="['watch',video.id]">
-    <img class="card-img-top vio--card-img" [src]="video.thumbnail" alt="Title">
+<a class="card text-white bg-dark hover--zoom" [routerLink]="['/watch',video._id]">
+    <img class="card-img-top vio--card-img" [src]="API_URL+video.thumbnail" alt="Title">
     <div class="card-body">
         <p class="card-text ellipsis">{{video.title}}</p>
         <div class="d-flex justify-content-between align-items-center">
             <div class="card-user ">
-                <img [src]="video.user.imgURL" alt="usericon">
+                <img [src]="API_URL+video.user.imageUrl" alt="usericon">
                 <strong>{{video.user.name}}</strong>
             </div>
             <small class="text-body-secondary">Views :
-                {{video.views}}<br>{{video.uploadDate.toLocaleDateString()}}</small>
+                {{video.views}}<br>{{video.createdAt.toLocaleDateString()}}</small>
         </div>
     </div>
 </a>

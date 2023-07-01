@@ -54,3 +54,12 @@
 .nav--item--active {
 	background: #272727;
 }
+.nav--items a {
+	text-decoration: none;
+}
+.nav--items img {
+	width: 40px;
+	aspect-ratio: 1;
+	object-fit: cover;
+	border-radius: 50%;
+}

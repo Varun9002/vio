@@ -1,25 +1,26 @@
 <div class="mb-md-3 mt-md-4 pb-2">
     <h2 class="fw-bold pt-2 mb-5">SIGNUP</h2>
-    <form>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
         <div class="form-outline form-white mb-3">
-            <input type="text" id="email" class=" form-control form-control-lg" />
-            <label class="form-label" for="email">Name</label>
+            <input type="text" id="name" class=" form-control form-control-lg" formControlName="name" />
+            <label class="form-label" for="name">Name</label>
         </div>
 
         <div class="form-outline form-white mb-3">
-            <input type="email" id="email" class=" form-control form-control-lg" />
-            <label class="form-label" for="email">Email</label>
+            <input type="email" id="S_email" class=" form-control form-control-lg" formControlName="email" />
+            <label class="form-label" for="S_email">Email</label>
         </div>
 
         <div class="form-outline form-white mb-3">
-            <input type="password" id="password" class="form-control form-control-lg" />
-            <label class="form-label" for="password">Password</label>
+            <input type="password" id="S_password" class="form-control form-control-lg" formControlName="password" />
+            <label class="form-label" for="S_password">Password</label>
         </div>
         <div class="form-outline form-white mb-3">
-            <input type="password" id="cnfm-pass" class="form-control form-control-lg" />
-            <label class="form-label" for="cnfm-pass">Confirm Password</label>
+            <input type="password" id="S_cnfm-pass" class="form-control form-control-lg"
+                formControlName="confirmPassword" />
+            <label class="form-label" for="S_cnfm-pass">Confirm Password</label>
         </div>
-        <button class="btn btn-outline-danger btn-lg px-5" type="submit">Signup</button>
+        <button class="btn btn-outline-danger btn-lg px-5" type="submit" [disabled]="!signupForm.valid">Signup</button>
     </form>
 </div>
 <div>

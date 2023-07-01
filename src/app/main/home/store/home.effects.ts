@@ -1,10 +1,10 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { map, switchMap } from 'rxjs';
-import { API_VideoRoot } from 'src/app/models/video.model';
+import { Video } from 'src/app/models/API_Video.model';
+import { environment } from 'src/environments/environment';
 import * as HomeActions from './home.action';
-import { Video } from './home.reducer';
 @Injectable()
 export class HomeEffects {
 	constructor(private actions$: Actions, private http: HttpClient) {}
@@ -12,50 +12,31 @@ export class HomeEffects {
 	fetchVideos$ = createEffect(() =>
 		this.actions$.pipe(
 			ofType(HomeActions.FetchVideos),
-			switchMap(() =>
+			switchMap(({ page }) =>
 				this.http
-					.get<API_VideoRoot>(
-						'https://api.pexels.com/videos/popular',
-						{
-							headers: new HttpHeaders({
-								Authorization:
-									'vF1VMm6sxxTBAJFLWygeYklNvloKRDfQ2lN60uzXXSjTe5dO1aUy7k6l',
-							}),
-						}
-					)
+					.get<{
+						message: string;
+						videos: Video[];
+						total: number;
+					}>(environment.API_URL + '/video/all', {
+						params: { page: page + 1 },
+					})
 					.pipe(
 						map((res) => {
-							const videos: Video[] = [];
-							for (const video of res.videos) {
-								let v: Video = {
-									id: video.id,
-									title: video.url
-										.substring(
-											video.url
-												.substring(
-													0,
-													video.url.length - 1
-												)
-												.lastIndexOf('/') + 1
-										)
-										.substring(0, video.url.length - 1),
-									uploadDate: new Date(),
-									views: 12,
-									thumbnail: video.image,
-									duration: video.duration,
-									url: video.video_files[0].link,
-									user: {
-										id: video.user.id,
-										name: video.user.name,
-										imgURL: video.user.url,
-									},
-								};
-								videos.push(v);
-							}
-							return videos;
+							let modPage = page;
+							if (res.videos.length > 0) modPage++;
+							return {
+								videos: res.videos,
+								totalVideos: res.total,
+								page: modPage,
+							};
 						}),
 						map((videos) => {
-							return HomeActions.LoadVideos({ videos });
+							videos.videos = videos.videos.map((video) => ({
+								...video,
+								createdAt: new Date(video.createdAt),
+							}));
+							return HomeActions.LoadVideos(videos);
 						})
 					)
 			)

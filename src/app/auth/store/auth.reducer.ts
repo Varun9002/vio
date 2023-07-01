@@ -1,31 +1,32 @@
 import { createReducer, on } from '@ngrx/store';
-import { User } from '../user.model';
+import { ActiveUser } from '../user.model';
 import * as AuthActions from './auth.actions';
 
 export interface State {
-	user: User | null;
+	user: ActiveUser | null;
 	isLoading: boolean;
-	signupSucess: boolean;
+	signupSuccess: boolean;
 	authError: string | null;
 }
 
 const initialState: State = {
 	user: null,
 	isLoading: false,
-	signupSucess: false,
+	signupSuccess: false,
 	authError: null,
 };
 export const AuthReducer = createReducer(
 	initialState,
 	on(AuthActions.LoginSuccess, (state, action) => ({
 		...state,
-		user: new User(
+		user: new ActiveUser(
 			action.id,
 			action.name,
 			action.image,
 			action.token,
 			action.expiresIn
 		),
+		signupSuccess: false,
 		isLoading: false,
 		authError: null,
 	})),
@@ -33,22 +34,26 @@ export const AuthReducer = createReducer(
 	on(AuthActions.LoginStart, (state, action) => ({
 		...state,
 		isLoading: true,
+		signupSuccess: false,
 		authError: null,
 	})),
 	on(AuthActions.AuthenticateFail, (state, action) => ({
 		...state,
 		user: null,
 		isLoading: false,
+		signupSuccess: false,
 		authError: action.error,
 	})),
 	on(AuthActions.SignupStart, (state, action) => ({
 		...state,
 		isLoading: true,
+		signupSuccess: false,
 		authError: null,
 	})),
 	on(AuthActions.SignupSuccess, (state, action) => ({
 		...state,
 		signupSuccess: true,
-	})),
-	on(AuthActions.ClearError, (state) => ({ ...state, authError: null }))
+		isLoading: false,
+		authError: null,
+	}))
 );

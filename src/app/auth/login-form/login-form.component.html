@@ -1,13 +1,13 @@
 <div class="mb-md-5 mt-md-4 pb-5">
     <h2 class="fw-bold mb-5">LOGIN</h2>
-    <form>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="form-outline form-white mb-3">
-            <input type="email" id="email" class="form-control form-control-lg" />
+            <input type="email" id="email" class="form-control form-control-lg" formControlName="email" />
             <label class="form-label" for="email">Email</label>
         </div>
 
         <div class="form-outline form-white mb-3">
-            <input type="password" id="password" class="form-control form-control-lg" />
+            <input type="password" id="password" class="form-control form-control-lg" formControlName="password" />
             <label class="form-label" for="password">Password</label>
         </div>
 
@@ -15,7 +15,7 @@
             <a class="text-white-50" style="cursor: pointer;">Forgot password?</a>
         </p>
 
-        <button class="btn btn-outline-danger btn-lg px-5" type="button">Login</button>
+        <button class="btn btn-outline-danger btn-lg px-5" type="submit" [disabled]="!loginForm.valid">Login</button>
     </form>
 </div>
 <div>

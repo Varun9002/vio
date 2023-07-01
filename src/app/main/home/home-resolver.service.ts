@@ -18,8 +18,6 @@ export class HomeResolverService implements Resolve<any> {
 		private actions$: Actions
 	) {}
 	resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-		console.log('In Resolver');
-
 		return this.store.select('home').pipe(
 			take(1),
 			map((home) => {
@@ -27,7 +25,7 @@ export class HomeResolverService implements Resolve<any> {
 			}),
 			switchMap((videos) => {
 				if (videos.length === 0) {
-					this.store.dispatch(HomeActions.FetchVideos());
+					this.store.dispatch(HomeActions.FetchVideos({ page: 0 }));
 					return this.actions$.pipe(
 						ofType(HomeActions.LoadVideos),
 						take(1)

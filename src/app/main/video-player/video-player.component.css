@@ -81,14 +81,5 @@ tabs--item.active:hover {
 	align-items: center;
 }
 .comment--btn > button {
-	padding: 13px;
-	font-size: larger;
 	border-radius: 100px;
-	background: transparent;
-	border: 2px solid red;
-	color: red;
-}
-.comment--btn > button:hover {
-	background: red;
-	color: black;
 }

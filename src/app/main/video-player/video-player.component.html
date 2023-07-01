@@ -1,14 +1,19 @@
 .<div class="container">
     <div class="row justify-content-center align-items-center g-2">
         <div class="col-12 col-md-10 text-white">
-            <video [src]="video.url" width="100%" controls="true"></video>
+            <video [src]="API_URL + video.url" width="100%" controls="true"></video>
 
             <div class="video--info">
-                <h3>{{video.title}}</h3>
-                <small>{{video.views}} Views</small>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h3>{{video.title}}</h3>
+                        <small>{{video.views}} Views</small>
+                    </div>
+                    <em>{{video.createdAt.toLocaleDateString()}}</em>
+                </div>
 
-                <a class="video--owner ">
-                    <img [src]="video.user.imgURL">
+                <a class="video--owner" [routerLink]="['/user',video.user._id]">
+                    <img [src]="API_URL + video.user.imageUrl">
                     <h4>{{video.user.name}}</h4>
                 </a>
             </div>
@@ -21,23 +26,19 @@
             <div class="tabss--data ">
                 <div class="video--desc" *ngIf="!showComments">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque aliquam voluptate adipisci
-                        maiores
-                        facere voluptatum placeat nisi, tempore eos quaerat, neque consequatur sunt at vero.
-                        Inventore
-                        labore
-                        officia aspernatur officiis.
+                        {{video.description}}
                     </p>
                 </div>
                 <div class="video--comments" *ngIf="showComments">
-                    <form>
-                        <input class="add--comment" type="text" placeholder="  Add comment">
+                    <form [formGroup]="commentForm" (ngSubmit)="postComment()">
+                        <input class="add--comment" type="text" placeholder="  Add comment" formControlName="comment">
                         <div class="comment--btn">
-                            <button>Comment</button>
+                            <button class="btn btn-outline-danger btn-lg px-3" type="submit"
+                                [disabled]="!commentForm.valid">Comment</button>
                         </div>
                     </form>
-                    <div class="list-group" *ngFor="let i of [1,2,3,4]">
-                        <app-comment></app-comment>
+                    <div class="list-group" *ngFor="let comment of video.comments">
+                        <app-comment [comment]="comment"></app-comment>
                     </div>
                 </div>
             </div>

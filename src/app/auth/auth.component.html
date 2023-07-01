@@ -13,10 +13,11 @@
             </div>
         </div>
     </div>
-    <div class="alert alert-success w-25 text-center position-fixed top-0 end-0">
+    <div class="alert alert-success w-25 text-center position-fixed top-0 end-0" *ngIf="hasSignedUp">
         <strong>Signup Successfull Login to proceed</strong>
     </div>
-    <div class="alert alert-danger w-25 text-center position-fixed top-0 end-0">
-        <strong>Signup Successfull Login to proceed</strong>
+    <div class="alert alert-danger w-25 text-center position-fixed top-0 end-0" *ngIf="errorMsg">
+        <strong>{{errorMsg}}</strong>
     </div>
 </div>
+<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>

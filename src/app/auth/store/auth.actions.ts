@@ -8,6 +8,7 @@ export const LoginSuccess = createAction(
 		image: string;
 		token: string;
 		expiresIn: Date;
+		redirect: boolean;
 	}>()
 );
 export const Logout = createAction('[Auth] Logout');
@@ -35,5 +36,3 @@ export const SignupStart = createAction(
 );
 
 export const SignupSuccess = createAction('[Auth] SignUp Start');
-
-export const ClearError = createAction('[Auth] Clear Error');
