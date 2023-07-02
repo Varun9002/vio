@@ -14,7 +14,7 @@ import { environment } from 'src/environments/environment';
 	styleUrls: ['./video-player.component.css'],
 })
 export class VideoPlayerComponent implements OnInit {
-	showComments = true;
+	showComments = false;
 	id!: string;
 	video!: Video;
 	API_URL = environment.API_URL + '/';
