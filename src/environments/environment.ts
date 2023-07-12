@@ -4,8 +4,7 @@
 
 export const environment = {
 	production: false,
-	// API_URL: 'http://localhost:5000',
-	API_URL: 'https://vioapi.azurewebsites.net',
+	API_URL: 'http://localhost:5000',
 };
 
 /*
