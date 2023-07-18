@@ -55,5 +55,15 @@ export const AuthReducer = createReducer(
 		signupSuccess: true,
 		isLoading: false,
 		authError: null,
+	})),
+	on(AuthActions.UpdateUser, (state, action) => ({
+		...state,
+		user: new ActiveUser(
+			state.user!.id,
+			action.name,
+			action.imageUrl,
+			state.user!.token!,
+			state.user!.tokenExpDate!
+		),
 	}))
 );

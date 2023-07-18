@@ -25,6 +25,7 @@ import { NavComponent } from './sideNav/nav/nav.component';
 import { appReducers } from './store/app.reducer';
 import { UserProfileComponent } from './main/user-profile/user-profile.component';
 import { UploadComponent } from './main/upload/upload.component';
+import { EditProfileComponent } from './main/user-profile/edit-profile/edit-profile.component';
 
 @NgModule({
 	declarations: [
@@ -43,6 +44,7 @@ import { UploadComponent } from './main/upload/upload.component';
 		ErrorPageComponent,
   UserProfileComponent,
   UploadComponent,
+  EditProfileComponent,
 	],
 	imports: [
 		BrowserModule,

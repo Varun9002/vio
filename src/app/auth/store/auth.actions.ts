@@ -36,3 +36,11 @@ export const SignupStart = createAction(
 );
 
 export const SignupSuccess = createAction('[Auth] SignUp Start');
+
+export const UpdateUser = createAction(
+	'[Auth] Update User',
+	props<{
+		name: string;
+		imageUrl: string;
+	}>()
+);

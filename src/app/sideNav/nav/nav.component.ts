@@ -15,12 +15,19 @@ export class NavComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.store.select('auth').subscribe((authState) => {
+			const u = this.user;
 			this.user = authState.user;
 			if (this.user) {
 				this.displayName = this.user!.name.split(' ')[0];
 				if (this.displayName.length >= 6) {
 					this.displayName = this.displayName.substring(0, 5) + '..';
 				}
+			}
+			if (u !== authState.user) {
+				localStorage.setItem(
+					'loggedInUser',
+					JSON.stringify(authState.user)
+				);
 			}
 		});
 	}

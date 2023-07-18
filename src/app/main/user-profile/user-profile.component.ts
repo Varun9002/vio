@@ -31,6 +31,7 @@ export class UserProfileComponent implements OnInit, OnDestroy {
 	API_URL = environment.API_URL;
 	url = '';
 	myProfile: boolean = false;
+	editMode = false;
 
 	constructor(
 		private route: ActivatedRoute,
@@ -96,9 +97,19 @@ export class UserProfileComponent implements OnInit, OnDestroy {
 			});
 		this.videoListService.loadMore.next();
 	}
+	onEditProfile() {
+		this.editMode = true;
+	}
 	ngOnDestroy(): void {
 		if (this.subs) {
 			this.subs.unsubscribe();
 		}
+	}
+	onEditEmit(n: number) {
+		console.log(n);
+
+		if (n === 2) this.editMode = false;
+		if (n === 0) this.isLoading = false;
+		if (n === 1) this.isLoading = true;
 	}
 }

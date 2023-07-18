@@ -12,7 +12,7 @@
 	aspect-ratio: 1/1;
 	width: 40px;
 	border-radius: 50%;
-	object-fit: contain;
+	object-fit: cover;
 }
 .card-user strong {
 	padding: 5px;
