@@ -59,6 +59,7 @@ export class VideoPlayerComponent implements OnInit {
 					this.video.comments?.push({
 						userId: <User>{ _id: id, name: name },
 						comment: comt,
+						cmntDate: new Date(),
 					});
 				})
 			)

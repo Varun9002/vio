@@ -23,12 +23,6 @@ export class NavComponent implements OnInit {
 					this.displayName = this.displayName.substring(0, 5) + '..';
 				}
 			}
-			if (u !== authState.user) {
-				localStorage.setItem(
-					'loggedInUser',
-					JSON.stringify(authState.user)
-				);
-			}
 		});
 	}
 	logout() {

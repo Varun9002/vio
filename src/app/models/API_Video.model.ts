@@ -27,4 +27,5 @@ export interface User {
 export interface Comment {
 	userId: User;
 	comment: string;
+	cmntDate: Date;
 }

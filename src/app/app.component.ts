@@ -21,7 +21,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	title = 'vio';
 
 	unsubscribe = new Subject<void>();
-	isLoading = true;
+	isLoading = false;
 
 	constructor(
 		private store: Store<fromApp.AppState>,

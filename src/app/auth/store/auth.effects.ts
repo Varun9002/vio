@@ -133,8 +133,6 @@ export class AuthEffects {
 		return this.actions$.pipe(
 			ofType(AuthActions.AutoLogin),
 			map(() => {
-				console.log('In Autologin');
-
 				const jsonUser = localStorage.getItem('loggedInUser');
 				if (!jsonUser) {
 					return { type: 'dummy' };
@@ -171,4 +169,30 @@ export class AuthEffects {
 			})
 		);
 	});
+	authUpdateUser$ = createEffect(
+		() =>
+			this.actions$.pipe(
+				ofType(AuthActions.UpdateUser),
+				tap((data) => {
+					const jsonUser = localStorage.getItem('loggedInUser');
+					if (!jsonUser) {
+						return;
+					}
+					const userData: {
+						id: string;
+						name: string;
+						image: string | null;
+						_token: string;
+						_tokenExpirationDate: string;
+					} = JSON.parse(jsonUser);
+					userData.image = data.imageUrl;
+					userData.name = data.name;
+					localStorage.setItem(
+						'loggedInUser',
+						JSON.stringify(userData)
+					);
+				})
+			),
+		{ dispatch: false }
+	);
 }

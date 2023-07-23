@@ -27,6 +27,10 @@ export class VideoPlayerResolver implements Resolve<any> {
 					map((resData) => {
 						const data = { ...resData.data };
 						data.createdAt = new Date(resData.data.createdAt);
+						data.comments = data.comments?.map((cmt) => ({
+							...cmt,
+							cmntDate: new Date(cmt.cmntDate),
+						}));
 						return data;
 					}),
 					catchError((errorRes: HttpErrorResponse) => {

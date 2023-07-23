@@ -1,4 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
+import { environment } from 'src/environments/environment';
 import { ActiveUser } from '../user.model';
 import * as AuthActions from './auth.actions';
 
@@ -61,7 +62,7 @@ export const AuthReducer = createReducer(
 		user: new ActiveUser(
 			state.user!.id,
 			action.name,
-			action.imageUrl,
+			environment.API_URL + '/' + action.imageUrl,
 			state.user!.token!,
 			state.user!.tokenExpDate!
 		),

@@ -72,7 +72,7 @@ export class EditProfileComponent implements OnInit {
 				this.store.dispatch(
 					AuthActions.UpdateUser({
 						name: data.name,
-						imageUrl: environment.API_URL + '/' + data.imageUrl!,
+						imageUrl: data.imageUrl!,
 					})
 				);
 				this.user!.name = data.name;

@@ -15,6 +15,9 @@ import { AuthEffects } from './auth/store/auth.effects';
 import { HomeComponent } from './main/home/home.component';
 import { HomeEffects } from './main/home/store/home.effects';
 import { SearchComponent } from './main/search/search.component';
+import { UploadComponent } from './main/upload/upload.component';
+import { EditProfileComponent } from './main/user-profile/edit-profile/edit-profile.component';
+import { UserProfileComponent } from './main/user-profile/user-profile.component';
 import { VideoItemComponent } from './main/video-list/video-item/video-item.component';
 import { VideoListComponent } from './main/video-list/video-list.component';
 import { CommentComponent } from './main/video-player/comment/comment.component';
@@ -23,9 +26,6 @@ import { ErrorPageComponent } from './shared/error-page/error-page.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { NavComponent } from './sideNav/nav/nav.component';
 import { appReducers } from './store/app.reducer';
-import { UserProfileComponent } from './main/user-profile/user-profile.component';
-import { UploadComponent } from './main/upload/upload.component';
-import { EditProfileComponent } from './main/user-profile/edit-profile/edit-profile.component';
 
 @NgModule({
 	declarations: [
@@ -42,9 +42,9 @@ import { EditProfileComponent } from './main/user-profile/edit-profile/edit-prof
 		LoginFormComponent,
 		LoadingSpinnerComponent,
 		ErrorPageComponent,
-  UserProfileComponent,
-  UploadComponent,
-  EditProfileComponent,
+		UserProfileComponent,
+		UploadComponent,
+		EditProfileComponent,
 	],
 	imports: [
 		BrowserModule,
